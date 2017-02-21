@@ -1,4 +1,6 @@
-﻿namespace StudioDonder.OAuth2.Mobile.Tests
+﻿using Xamarin.Auth;
+
+namespace StudioDonder.OAuth2.Mobile.Tests
 {
     using System;
     using System.Collections.Generic;
@@ -7,8 +9,6 @@
     using System.Threading.Tasks;
 
     using StudioDonder.OAuth2.Mobile.Tests.Helpers;
-
-    using Xamarin.Auth;
 
     using Xunit;
 
