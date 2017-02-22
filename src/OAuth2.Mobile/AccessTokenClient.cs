@@ -1,4 +1,7 @@
-﻿namespace StudioDonder.OAuth2.Mobile
+﻿using System.Collections.Generic;
+using Java.Util;
+
+namespace StudioDonder.OAuth2.Mobile
 {
     using System.Net;
     using System.Threading;
@@ -79,9 +82,9 @@
         /// <remarks>
         /// This method implements the resource owner password credentials grant workflow (http://tools.ietf.org/html/rfc6749#section-4.3)
         /// </remarks>
-        public Task<AccessToken> GetUserAccessToken(string username, string password, string scope)
+        public Task<AccessToken> GetUserAccessToken(string username, string password, string scope, Dictionary<string,string> extra = null)
         {
-            return this.GetUserAccessToken(username, password, scope, CancellationToken.None);
+            return this.GetUserAccessToken(username, password, scope, CancellationToken.None, extra);
         }
 
         /// <summary>
@@ -95,12 +98,12 @@
         /// <remarks>
         /// This method implements the resource owner password credentials grant workflow (http://tools.ietf.org/html/rfc6749#section-4.3)
         /// </remarks>
-        public Task<AccessToken> GetUserAccessToken(string username, string password, string scope, CancellationToken cancellationToken)
+        public Task<AccessToken> GetUserAccessToken(string username, string password, string scope, CancellationToken cancellationToken, Dictionary<string, string> extra = null)
         {
             Requires.NotNullOrEmpty(username, "username");
             Requires.NotNullOrEmpty(password, "password");
             
-            return this.ExecuteAccessTokenRequest(new ResourceOwnerPasswordCredentialsGrantTokenRequest(username, password, this.serverConfiguration.ClientId, scope), cancellationToken);
+            return this.ExecuteAccessTokenRequest(new ResourceOwnerPasswordCredentialsGrantTokenRequest(username, password, this.serverConfiguration.ClientId, scope, extra), cancellationToken);
         }
 
         /// <summary>

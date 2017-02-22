@@ -1,4 +1,7 @@
-﻿namespace StudioDonder.OAuth2.Mobile.Requests
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
+
+namespace StudioDonder.OAuth2.Mobile.Requests
 {
     using System.Collections.Specialized;
 
@@ -15,6 +18,7 @@
         private readonly string password;
         private readonly string clientId;
         private readonly string scope;
+        private readonly Dictionary<string, string> extra;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceOwnerPasswordCredentialsGrantTokenRequest"/> class.
@@ -30,7 +34,7 @@
         /// or
         /// clientId
         /// </exception>
-        public ResourceOwnerPasswordCredentialsGrantTokenRequest(string username, string password, string clientId, string scope)
+        public ResourceOwnerPasswordCredentialsGrantTokenRequest(string username, string password, string clientId, string scope, Dictionary<string,string> extra = null)
         {
             Requires.NotNullOrEmpty(username, "username");
             Requires.NotNullOrEmpty(password, "password");
@@ -40,6 +44,7 @@
             this.password = password;
             this.clientId = clientId;
             this.scope = scope;
+            this.extra = extra;
         }
 
         /// <summary>
@@ -50,14 +55,17 @@
         /// </returns>
         protected override NameValueCollection GetParameters()
         {
-            return new NameValueCollection
-                       {
-                           { "grant_type", PasswordGrantType },
-                           { "client_id", this.clientId },
-                           { "username", this.username },
-                           { "password", this.password },
-                           { "scope", this.scope }
-                       };
+            var parameters = new NameValueCollection
+                               {
+                                   { "grant_type", PasswordGrantType },
+                                   { "client_id", this.clientId },
+                                   { "username", this.username },
+                                   { "password", this.password },
+                                   { "scope", this.scope }
+                               };
+            foreach(var s in extra) parameters.Add(s.Key, s.Value);
+
+            return parameters;
         }
     }
 }
