@@ -86,6 +86,9 @@
     <Compile Include="..\OAuth2.Mobile\AccessTokenResponse.cs">
       <Link>AccessTokenResponse.cs</Link>
     </Compile>
+    <Compile Include="..\OAuth2.Mobile\OAuth2RequestExtensions.cs">
+      <Link>OAuth2RequestExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\OAuth2.Mobile\OAuthServerConfiguration.cs">
       <Link>OAuthServerConfiguration.cs</Link>
     </Compile>

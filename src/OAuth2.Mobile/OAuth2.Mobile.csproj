@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="AccessToken.cs" />
     <Compile Include="AccessTokenResponse.cs" />
+    <Compile Include="OAuth2RequestExtensions.cs" />
     <Compile Include="ResponseStatusExtensions.cs" />
     <Compile Include="OAuthServerConfiguration.cs" />
     <Compile Include="Requests\ClientCredentialsGrantTokenRequest.cs" />
