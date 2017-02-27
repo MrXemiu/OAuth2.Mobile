@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Java.Util;
 
 namespace StudioDonder.OAuth2.Mobile
 {
@@ -18,7 +17,7 @@ namespace StudioDonder.OAuth2.Mobile
     /// <summary>
     /// This client allows retrieval of access tokens through the OAuth 2 protocol (http://tools.ietf.org/html/rfc6749).
     /// </summary>
-    public class AccessTokenClient
+    public class AccessTokenClient : IAccessTokenClient
     {
         private readonly OAuthServerConfiguration serverConfiguration;
         private readonly JsonDeserializer jsonDeserializer;

@@ -13,7 +13,7 @@
     /// A store to securely store <see cref="AccessToken"/> instances in. This class acts as a wrapper around
     /// the <see cref="AccountStore"/> class, which is where the actual storage takes place.
     /// </summary>
-    public class AccessTokenStore
+    public class AccessTokenStore : IAccessTokenStore
     {
         private const string NormalizedUsernamePrefix = "user:";
         private const string NormalizedClientIdPrefix = "client:";

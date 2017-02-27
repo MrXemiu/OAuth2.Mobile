@@ -80,18 +80,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\OAuth2.Mobile\AccessToken.cs">
-      <Link>AccessToken.cs</Link>
-    </Compile>
-    <Compile Include="..\OAuth2.Mobile\AccessTokenResponse.cs">
-      <Link>AccessTokenResponse.cs</Link>
-    </Compile>
-    <Compile Include="..\OAuth2.Mobile\OAuth2RequestExtensions.cs">
-      <Link>OAuth2RequestExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\OAuth2.Mobile\OAuthServerConfiguration.cs">
-      <Link>OAuthServerConfiguration.cs</Link>
-    </Compile>
     <Compile Include="..\OAuth2.Mobile\Requests\ClientCredentialsGrantTokenRequest.cs">
       <Link>Requests\ClientCredentialsGrantTokenRequest.cs</Link>
     </Compile>
@@ -110,12 +98,10 @@
     <Compile Include="..\OAuth2.Mobile\RestClientExtensions.cs">
       <Link>RestClientExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\OAuth2.Mobile\AccessTokenClient.cs">
-      <Link>AccessTokenClient.cs</Link>
-    </Compile>
     <Compile Include="..\OAuth2.Mobile\AccessTokenStore.cs">
       <Link>AccessTokenStore.cs</Link>
     </Compile>
+    <Compile Include="AccessTokenClient.cs" />
     <Compile Include="HttpException.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
@@ -126,5 +112,11 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OAuth2.Mobile.Portable\OAuth2.Mobile.Portable.csproj">
+      <Project>{b66313e4-a310-4de1-9feb-0244c936d118}</Project>
+      <Name>OAuth2.Mobile.Portable</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OAuth2.Mobile</id>
+    <version>1.0.0</version>
+    <title>OAuth2.Mobile</title>
+    <authors>Erik Schierboom, Gabe Chavez</authors>
+    <owners>Gabe Chavez</owners>
+    <licenseUrl>https://github.com/MrXemiu/OAuth2.Mobile/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/MrXemiu/OAuth2.Mobile</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library built to easily interact with OAuth 2 servers using two-legged authentication on the Xamarin.iOS and Xamarin.Android platforms. For these platforms the Xamarin.Auth library offers support for three-legged authentication. Our library is built on top of Xamarin.Auth to also add two-legged authentication support. This library is built to integrate seamlessly with the Task Parallel Library, so most methods return Task&lt;T&gt; instances.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) 2014 Studio Donder</copyright>    
+  </metadata>
+</package>

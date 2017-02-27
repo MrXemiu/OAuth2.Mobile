@@ -59,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\OAuth2.Mobile.Portable\OAuth2.Mobile.Portable.csproj">
+      <Project>{B66313E4-A310-4DE1-9FEB-0244C936D118}</Project>
+      <Name>OAuth2.Mobile.Portable</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\OAuth2.Mobile\OAuth2.Mobile.csproj">
       <Project>{DD5D3E7D-95F1-474E-9CF1-25B47ECBB6D3}</Project>
       <Name>OAuth2.Mobile</Name>
